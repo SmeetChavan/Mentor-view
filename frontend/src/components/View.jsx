@@ -101,6 +101,7 @@ const View = () => {
                             },
                         }}
                         pageSizeOptions={[5, 10]}
+                        className='data_grid'
                     />
                 }
             </div>

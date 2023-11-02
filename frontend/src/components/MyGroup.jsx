@@ -220,6 +220,7 @@ const MyGroup = () => {
                 },
                 }}
                 pageSizeOptions={[5, 10]}
+                className='data_grid'
             />
             <PopUpModal
                 open={open}
