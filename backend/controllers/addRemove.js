@@ -100,6 +100,7 @@ export const removeStudentFromGroup = async (req , res , next) => {
         await mentor.save();
 
         student.isAvailable = true;
+        student.isMarksAssigned = false;
         student.marks.idea = 0;
         student.marks.exec = 0;
         student.marks.viva = 0;

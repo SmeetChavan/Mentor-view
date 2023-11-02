@@ -111,7 +111,7 @@ const MyGroup = () => {
             removedStudent.marks.exec = 0;
             removedStudent.marks.viva = 0;
             removedStudent.marks.total = 0;
-    
+
             setAvaiStudents((prev) => [...prev, removedStudent]);
             setMentor(copyMentor);
 
@@ -122,8 +122,11 @@ const MyGroup = () => {
             toast.success("Removed from group");
 
         } catch (error) {
+
+            toast.dismiss();
             toast.error("An error occured");
             console.log("An error occured in MyGroup component");
+
         }
     }
 
@@ -132,8 +135,8 @@ const MyGroup = () => {
         { field: 'name', headerName: 'Name', width: 150 },
         { field: 'email', headerName: 'Email', width: 200 },
         {
-            field: "marks",
-            headerName: "Marks",
+            field: "status",
+            headerName: "Status",
             width: 150,
 
             renderCell: (params) => {

@@ -86,7 +86,7 @@ const PopUpModal = ({ open, onClose, studentId }) => {
 
             console.log(updatedAllStudents);
             setMentor(updatedMentor);
-            setMentor(updatedAllStudents);
+            setAllStudents(updatedAllStudents);
 
             localStorage.setItem("mentor" , JSON.stringify(updatedMentor));
             localStorage.setItem("allStud" , JSON.stringify(updatedAllStudents));

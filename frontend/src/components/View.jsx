@@ -35,8 +35,8 @@ const View = () => {
         { field: 'name', headerName: 'Name', width: 150 },
         { field: 'email', headerName: 'Email', width: 200 },
 		{
-            field: "marks",
-            headerName: "Marks",
+            field: "status",
+            headerName: "Status",
             width: 150,
 
             renderCell: (params) => {
@@ -55,14 +55,15 @@ const View = () => {
                 };
 
                 return (
-                <Chip
-                    label= {(isAssigned) ? "Assigned" : "Not Assigned"}
-                    color="primary"
-                    style={chipStyle}
-                />
-                );
-            },
+                    <Chip
+                        label= {(isAssigned) ? "Assigned" : "Not Assigned"}
+                        color="primary"
+                        style={chipStyle}
+                    />
+                    );
+                },
         },
+        { field: 'marks', headerName: 'Marks', width: 200 },
     ];
 
     const all = allStudents.map((student , index) => ({
@@ -71,6 +72,7 @@ const View = () => {
         name: student.name,
         email: student.email,
         isMarksAssigned: student.isMarksAssigned,
+        marks: student.marks.total,
     }));
 
     const assigned = all.filter((student) => student.isMarksAssigned === true);
@@ -86,7 +88,7 @@ const View = () => {
 
             <div style={{ height: "auto", width: '100%' }}>
                 {
-                    avaiStudents.length === 0 ?
+                    allStudents.length === 0 ?
 
                     <h2>No data</h2> :
 

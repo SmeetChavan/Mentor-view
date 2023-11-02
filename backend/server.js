@@ -5,8 +5,6 @@ import dotenv from "dotenv";
 import allRoutes from "./routes/allRoutes.js"
 import cors from "cors";
 
-import {addMentor} from "./controllers/addRemove.js";
-
 dotenv.config({
     path: "./.env",
 });

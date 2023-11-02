@@ -25,7 +25,7 @@ const Available = () => {
                 studentId,
             });
 
-            
+
             const updatedAvai = [...avaiStudents];
             const index = updatedAvai.findIndex((student) => student._id === studentId);
 
