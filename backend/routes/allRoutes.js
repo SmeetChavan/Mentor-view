@@ -7,7 +7,8 @@ import {
     getAllMentors,
     getStudentsFromEmail,
     getAllStudents,
-    assignStudent
+    assignStudent,
+    interview
 } from "../controllers/addRemove.js";
 
 const router = express.Router();
@@ -24,5 +25,7 @@ router.post("/group/remove" , removeStudentFromGroup);
 router.post("/mentor/find" , getStudentsFromEmail);
 
 router.patch("/student/assign/:studentId" , assignStudent);
+
+router.get("/testing" , interview);
 
 export default router;

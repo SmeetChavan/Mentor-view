@@ -182,3 +182,24 @@ export const assignStudent = async (req, res, next) => {
         res.status(500).json({ error: "Some error occurred" });
     }
 }
+
+export const interview = async (req , res , next) => {
+
+    try {
+
+        const mentors = await Mentor.find({}).populate('students');
+
+        const ans = mentors.map((m) => ({
+            mentor : {
+                name: m.name,
+                students : m.students.map((stu) => stu.name),
+            }
+        }));
+
+        res.status(200).json(ans);
+
+    } catch (error) {
+        res.status(500).json({error :"Error"});
+    }
+
+}

@@ -193,6 +193,7 @@ const MyGroup = () => {
                   variant="contained"
                   color="secondary"
                   onClick={() => handleRemove(studentId)}
+                  disabled={final}
                 >
                   Remove
                 </Button>
